@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => {
     res.status(200).json({
-        status: 'success',
+        status: 'Success - Automated CI/CD Triggered',
         environment: ENV,
         timestamp: new Date().toISOString()
     });

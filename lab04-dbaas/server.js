@@ -1,10 +1,10 @@
-const { Client } = require('pg');
-app.get('/bad-query', async (req, res) => {
- const client = new Client({ connectionString: process.env.DATABASE_URL });
- await client.connect(); // Fails under >100 concurrent requests (SQLSTATE 53300)
- const result = await client.query('SELECT NOW()');
- res.json(result.rows); // BUG: client.end() never called if query throws or after response!
-});
+// const { Client } = require('pg');
+// app.get('/bad-query', async (req, res) => {
+//  const client = new Client({ connectionString: process.env.DATABASE_URL });
+//  await client.connect(); // Fails under >100 concurrent requests (SQLSTATE 53300)
+//  const result = await client.query('SELECT NOW()');
+//  res.json(result.rows); // BUG: client.end() never called if query throws or after response!
+// });
 
 'use strict';
 
